@@ -24,7 +24,9 @@ python manage.py loaddata books.json
 ### Correr el proyecto
 python manage.py runserver
 
-### Para ver la paginacion 
+### Para ver la paginacion
+Para vista basada en clase:
 http://127.0.0.1:8000/libros/?page=2
 
-
+Para vista basada en funciones:
+http://127.0.0.1:8000/libros/listing/?page=2
