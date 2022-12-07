@@ -1,0 +1,16 @@
+<ul>
+    <!-- Iterate over object_list -->
+    {% for object in object_list %}
+    <!-- Display Objects -->
+    <div  style='background-color: {% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' %}'>
+    <li>{{ object.title }}</li>
+    <li>{{ object.authors }}</li>
+    </div>
+
+    <hr/>
+    hola
+    <!-- If object_list is empty  -->
+    {% empty %}
+    <li>No objects yet.</li>
+    {% endfor %}
+</ul>
