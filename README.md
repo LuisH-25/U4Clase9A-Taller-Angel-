@@ -21,6 +21,10 @@ INSTALLED_APPS = [
 ### Cargar data de un json
 python manage.py loaddata books.json
 
+### Crear la db
+Crear una db en mysql con nombre: libros_book
+Realizar makemigrations y migrate de la aplicacion
+
 ### Correr el proyecto
 python manage.py runserver
 
