@@ -14,3 +14,4 @@ class Book(models.Model):
     text_reviews_count = models.IntegerField()
     publication_date = models.CharField(max_length=20)
     publisher = models.CharField(max_length=300)
+     

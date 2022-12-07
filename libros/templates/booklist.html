@@ -1,6 +1,7 @@
 <ul>
+    <!-- page_obj -->    <!-- Para lista basada en funciones, http://127.0.0.1:8000/libros/listing/?page=2--> 
     <!-- Iterate over object_list -->
-    {% for object in object_list %}
+    {% for object in object_list %}   <!-- Para lista basada en clase http://127.0.0.1:8000/libros/?page=2 -->     
     <!-- Display Objects -->
     <div  style='background-color: {% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' %}'>
     <li>{{ object.title }}</li>
@@ -8,9 +9,27 @@
     </div>
 
     <hr/>
-    hola
     <!-- If object_list is empty  -->
     {% empty %}
     <li>No objects yet.</li>
     {% endfor %}
 </ul>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; Primera</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span class="current">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Último &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
